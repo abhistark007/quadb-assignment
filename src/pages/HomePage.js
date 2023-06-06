@@ -19,6 +19,7 @@ function HomePage({ movieList }) {
                         name={movie.show.name}
                         image={movie.show.image.original}
                         score={movie.score}
+                        summary={movie.show.summary}
                     />
                 }) : (<Skeleton variant="rectangular" width={"80%"} height={500} />)
             }
