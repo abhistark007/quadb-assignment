@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { fetchData } from './controllers/api';
+import Header from './components/Header';
 
 function App() {
   const [movieList,setMovieList]=useState(null);
@@ -15,7 +16,7 @@ function App() {
   }
   return (
     <div className="App">
-
+      <Header/>
     </div>
   );
 }
