@@ -1,0 +1,71 @@
+.summarypage {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: rgb(34, 193, 195);
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 150px;
+    gap: 20px;
+}
+.summarypage > img{
+    width: 400px;
+    border: 10px solid purple;
+    box-shadow: 0 0 5px 5px purple;
+}
+
+.summarypage > h1{
+    box-shadow: 0 6px 0px white;
+}
+
+.summarypage > p{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    font-size: x-large;
+}
+
+.summarypage > button{
+    background-color: brown; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 400px;
+    color: white;
+    letter-spacing: 1px;
+    font-size: x-large;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: 0 3px 10px 10px rgb(0 0 0 / 0.2);
+    cursor: pointer;
+    transition-duration: 200ms;
+}
+
+.summarypage > button:hover{
+    scale: 1.2;
+}
+
+.ticketform{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ticketform > button{
+    background-color: brown; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 380px;
+    color: white;
+    letter-spacing: 1px;
+    font-size: x-large;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: 0 3px 10px 10px rgb(0 0 0 / 0.2);
+    cursor: pointer;
+    transition-duration: 200ms;
+}
+
+.ticketform > button:hover{
+    scale: 1.2;
+}
