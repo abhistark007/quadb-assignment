@@ -1,0 +1,29 @@
+.header{
+    display: flex;
+    padding: 20px 50px;
+    background-color: #F3D940;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header > img{
+    object-fit: contain;
+}
+
+.header > button{
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: #926000;
+    color: white;
+    letter-spacing: 2px;
+    border: none;
+    transition-duration: 200ms;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.header > button:hover{
+    scale: 1.2;
+    
+}
