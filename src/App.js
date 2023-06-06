@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { fetchData } from './controllers/api';
 import Header from './components/Header';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import SummaryPage from './pages/SummaryPage';
 
 function App() {
   const [movieList,setMovieList]=useState(null);
@@ -17,6 +20,11 @@ function App() {
   return (
     <div className="App">
       <Header/>
+
+      <Routes>
+        <Route path='/' element={<HomePage movieList={movieList}/>}/>
+        <Route path='/summary' element={<SummaryPage/>}/>
+      </Routes>
     </div>
   );
 }
