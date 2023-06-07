@@ -11,6 +11,8 @@ function SummaryPage() {
     const [gender,setGender]=useState("Male");
     const [ticketsCount,setTicketsCount]=useState(1);
 
+    const [show,setShow]=useState(false);
+
     useEffect(()=>{
         const items = JSON.parse(localStorage.getItem('user'));
         if(!items)return;
@@ -32,41 +34,43 @@ function SummaryPage() {
         <img src={image} alt={name} />
         <h1>{name}</h1>
         <p dangerouslySetInnerHTML={{__html: summary}}></p>
-        <button>Book Tickets Now !</button>
-        <div className="ticketform">
-        <TextField id="filled-basic" label="Movie Name" variant="filled" InputProps={{
-            readOnly: true,
-          }} value={name} style={{background:"white",width:"380px"}}/>
-
-        <TextField id="filled-basic" label="Your Name" variant="filled" value={userName} onChange={(e)=>setUserName(e.target.value)} style={{background:"white",width:"380px"}}/>
-
-        <FormControl variant="filled" style={{  Width: "380px",background:"white"}}>
-        <InputLabel id="demo-simple-select-label">Gender</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={gender}
-          label="Age"
-          onChange={(e)=>setGender(e.target.value)}
-        >
-          <MenuItem value={"Male"}>Male</MenuItem>
-          <MenuItem value={"Female"}>Female</MenuItem>
+        <button onClick={()=>setShow(!show)}>Book Tickets Now !</button>
+        {
+          show?(<div className="ticketform">
+          <TextField id="filled-basic" label="Movie Name" variant="filled" InputProps={{
+              readOnly: true,
+            }} value={name} style={{background:"white"}}/>
+  
+          <TextField id="filled-basic" label="Your Name" variant="filled" value={userName} onChange={(e)=>setUserName(e.target.value)} style={{background:"white"}}/>
+  
+          <FormControl variant="filled" style={{  background:"white"}}>
+          <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={gender}
+            label="Age"
+            onChange={(e)=>setGender(e.target.value)}
+          >
+            <MenuItem value={"Male"}>Male</MenuItem>
+            <MenuItem value={"Female"}>Female</MenuItem>
+            
+          </Select>
+          </FormControl>
           
-        </Select>
-        </FormControl>
-        
-        <TextField type='number' id="filled-basic" label="Number of seats" variant="filled" value={ticketsCount} onChange={(e)=>{
-            if(e.target.value>=1){
-                setTicketsCount(e.target.value)
-            }else{
-                setTicketsCount(1);
-            }
-        }} style={{background:"white",width:"380px"}}/>
-        
-        <button onClick={handlePay}>Proceed to pay !</button>
-
-        
-        </div>
+          <TextField type='number' id="filled-basic" label="Number of seats" variant="filled" value={ticketsCount} onChange={(e)=>{
+              if(e.target.value>=1){
+                  setTicketsCount(e.target.value)
+              }else{
+                  setTicketsCount(1);
+              }
+          }} style={{background:"white"}}/>
+          
+          <button onClick={handlePay}>Proceed to pay !</button>
+  
+          
+          </div>):(<></>)
+        }
     </div>
   )
 }
